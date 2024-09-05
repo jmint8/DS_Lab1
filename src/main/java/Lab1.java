@@ -8,10 +8,23 @@ public class Lab1 {
 	*/
 	   public static int squares(int n)
 	   {
+		   if (n<0)
+		   {
+			   return -1;
+		   }
+		   else
+		   {
+			   int total = 0;
+			   int cnum = n;
+			   for (int i = 0; i<n; i++)
+			   {
+				   total = total+(cnum*cnum);
+				   cnum = cnum-1;
+			   }
+		   return total;
+		   }
+	   }  
 	   
-	      return 0;  
-	   
-	   }
 
 	/**
 	* This function that takes an array of integers and
@@ -22,8 +35,22 @@ public class Lab1 {
 	*/
 	   public static int maxIndex(int array[],int len)
 	   {
-   
-	      return 0;
+		   if(len == 0)
+		  {
+			  return -1;
+		  }
+		  else 
+		  {
+			  int max = array[0];
+			  for (int i = 0;i<len;i++)
+			  {
+				  if(max<array[i])
+				  {
+					  max = array[i];
+				  }
+			  }
+		  return max;
+		  }
 	   }
 
 	/**
@@ -34,20 +61,30 @@ public class Lab1 {
 	*/
 	   public static boolean seek(int array[],int len,int target)
 	   {
-   
-	      return false;      
-	  	
-	      
+		   int counter = 0;
+		   for(int i = 0;i<len;i++)
+		   {
+			   if(array[i]==target)
+			   {
+				   counter++;
+			   }
+		   }
+		   if(counter>0)
+		   {
+			   return true;
+		   }
+		   else
+		   {
+			   return false;      
+		   }
 	   }
-
-
 
 	/**
 	* This function takes an integer parameter and returns the nth number in the Fibonacci 
 	* sequence.  The first 6 numbers of the sequence are as follows.  1,1,2,3,5,8.  Note
 	* that 8 is the 6th number.  Be sure that your algorithm can return the
 	* first and second Fibonacci numbers correctly.  You should solve this without recursion. 
-	* If the input is below 1, retun 0;
+	* If the input is below 1, return 0;
 	*/
 	   public static int fib(int n)
 	   {
